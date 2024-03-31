@@ -1,6 +1,23 @@
 /* YOUR NAME GOES HERE */
 
 /* --------------- ADD CSS RESET TO THE FILE HERE --------------- */
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: unset;
+}
+
+button,input,textarea,select {
+    font: inherit;
+}
+
+img,picture,svg,canvas {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+}
 
 
 
@@ -31,9 +48,12 @@
 
 /* ----- CHECK FOR USER DARK MODE PREFERENCE ----- */
 /* --------------- BEGIN USER PREFERS DARK COLOR SCHEME QUERY --------------- */
-
 /* CHANGE THE BODY'S BACKGROUND COLOR TO THE DARK GRAY IF THE USER PREFERS DARK MODE */
-
+@media (prefers-color-scheme: dark){
+    body{
+        background-color: var(--dark-gray);
+    }
+}
 /* --------------- END USER PREFERS DARK COLOR SCHEME QUERY --------------- */
 
 
@@ -91,12 +111,15 @@ footer .icon{
 
 /* ----- HANDLE PREFERS REDUCED MOTION FOR THE ICON ANIMATIONS ----- */
 /* --------------- BEGIN USER PREFERS REDUCED MOTION QUERY --------------- */
+@media (prefers-reduced-motion: reduce) {
     @-webkit-keyframes icon-animation {
         0% { font-variation-settings: "TIME" 1; }
     }
     @keyframes icon-animation {
         0% { font-variation-settings: "TIME" 1; }
     }
+}
+
 /* --------------- END USER PREFERS REDUCED MOTION QUERY --------------- */
 
 
@@ -150,7 +173,9 @@ img{
 
 /* ---------- SMALL SCREEN STYLES ---------- */
 /* --------------- BEGIN SMALL SCREEN SIZES --------------- */
-    /* header, footer{
+
+@media (min-width: 576px){
+    header, footer{
         background-color: var(--lime-green);
         color: var(--dark-gray);
     }
@@ -175,14 +200,17 @@ img{
     img{
         width: 200px;
         max-width: 200px;
-    } */
+    }
 /* --------------- END SMALL SCREEN SIZES --------------- */
+}
 
 
 
 /* ---------- MEDIUM SCREEN STYLES ---------- */
 /* --------------- BEGIN MEDIUM SCREEN SIZES --------------- */
-    /* header, footer{
+
+@media (min-width: 769px){
+    header, footer{
         background-color: var(--black);
         color: var(--white);
     }   
@@ -207,14 +235,16 @@ img{
     #seven{
         grid-column: 3/4;
         grid-row: 3/5;
-    } */
+    }
 /* --------------- END MEDIUM SCREEN SIZES --------------- */
+}
 
 
 
 /* ---------- LARGE SCREEN STYLES ---------- */
 /* --------------- BEGIN LARGE SCREEN SIZES --------------- */
-    /* header, footer{
+@media (min-width:992px){
+    header, footer{
         background-color: var(--lime-green);
         color: var(--dark-gray);
     }
@@ -245,8 +275,9 @@ img{
 
     #seven, #eight{
         grid-row: 3/4;
-    } */
+    }
 /* --------------- END LARGE SCREEN SIZES --------------- */
+}
 
 
 
